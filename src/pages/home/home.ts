@@ -8,9 +8,11 @@ import {Phase_1Page} from '../phase-1/phase-1';
 })
 export class HomePage {
 	phase_1 = Phase_1Page;
+	userlocal:string;
 
   constructor(public navCtrl: NavController) {
-
+  	this.userlocal=localStorage.getItem("user_id");
+  	console.log(this.userlocal);
   }
 
 

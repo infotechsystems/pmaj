@@ -10,6 +10,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {Phase_1Page} from '../pages/phase-1/phase-1';
 import {DetailsPage} from '../pages/details/details';
+import {LoginPage} from '../pages/login/login';
+import {RegisterPage} from '../pages/register/register';
 //import {PhdetailsPage} from '../pages/phdetails/phdetails';
 
 @NgModule({
@@ -17,7 +19,9 @@ import {DetailsPage} from '../pages/details/details';
     MyApp,
     HomePage,
     Phase_1Page,
-    DetailsPage
+    DetailsPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import {DetailsPage} from '../pages/details/details';
     MyApp,
     HomePage,
     Phase_1Page,
-    DetailsPage
+    DetailsPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
