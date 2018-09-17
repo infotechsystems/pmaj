@@ -1,0 +1,43 @@
+
+<ion-header>
+<ion-toolbar color="secondary">
+   
+	<ion-buttons start>
+      <button ion-button (click)="goBack()">
+      	<ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+
+   <ion-title>Phase Deatils</ion-title> 	 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-row style="border-bottom: groove;">
+      <ion-col col-4>
+      <ion-label >Bill No</ion-label>
+    </ion-col>
+    <ion-col col-4>
+      <ion-label >Date</ion-label>
+    </ion-col>
+      <ion-col col-4>
+      <ion-label >Amount</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="border-bottom: groove;" *ngFor="let item of items">
+      <ion-col col-4>
+      <ion-label >{{ item.bill_no }}</ion-label>
+    </ion-col>
+    <ion-col col-4>
+      <ion-label >{{ item.bill_dt }}</ion-label>
+    </ion-col>
+      <ion-col col-4>
+      <ion-label >{{ item.amount }}&nbsp;{{ item.tr_code }}</ion-label>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

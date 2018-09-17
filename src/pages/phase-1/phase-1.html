@@ -1,0 +1,22 @@
+<ion-header>
+<ion-toolbar color="secondary">
+   
+	<ion-buttons start>
+	   <button ion-button (click)="goBack()" primary large><ion-icon name="home" ></ion-icon>
+	   </button>
+	 </ion-buttons>
+
+
+   <ion-title>Phase I Stage</ion-title> 	 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let arr of items" detail-push (click)="itemSelected(arr.ben_cd)">
+    	<ion-label for="firstname" stacked>{{ arr.cust_name }}</ion-label>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>
