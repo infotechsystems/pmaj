@@ -7,6 +7,7 @@ import {RegisterPage} from "../register/register";
 import {HttpClient} from '@angular/common/http';
 
 
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -39,29 +40,26 @@ login() : void
    {
 
     console.dir("user id:"+this.user_id.value);
-     console.dir("password:"+this.password.value);
+    console.dir("password:"+this.password.value);
 
       this.http
-      .get('http://localhost:80/api/login.php?user_id='+this.user_id.value+'&password='+this.password.value)
+      .get('http://infotechsystems.in/api/login.php?user_id='+this.user_id.value+'&password='+this.password.value)
       .subscribe((data : any) =>
       {
          
         this.user_data=data;
-         console.dir(data);
-        // this.user_id=JSON.parse(this.user_data).results;
+        console.dir(data);
         this.user_count=JSON.parse(this.user_data[0]['ct']); // this is the error
         console.log(this.user_count);
 
-       //  this.user_count = data;
-        // console.dir(this.user_count);
          if(this.user_count>0)  
          {
-         
          //  localStorage.setItem('user_id',this.user_id.value);
            this.nav.setRoot(HomePage);
 
          }else{
            console.log("wrong user id or password");
+           this.presentToast("wrong user id or password");
          }
          
       },
@@ -71,6 +69,19 @@ login() : void
       });
    }
 
+presentToast(message) {
+  let toast = this.toastCtrl.create({
+    message: message,
+    duration: 3000,
+    position: 'top'
+  });
+
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
+}
 
   forgotPass() {
     let forgot = this.forgotCtrl.create({

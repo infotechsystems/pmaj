@@ -31,7 +31,7 @@ export class DetailsPage {
   load_trans(ben_cd) : void
    {
       this.http
-      .get('http://localhost:80/api/retrieve-trans.php?ben_cd='+ben_cd)
+      .get('http://infotechsystems.in/api/retrieve-trans.php?ben_cd='+ben_cd)
       .subscribe((data : any) =>
       {
          console.dir(data);

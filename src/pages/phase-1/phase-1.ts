@@ -47,7 +47,7 @@ export class Phase_1Page {
 load(phase_no) : void
    {
       this.http
-      .get('http://localhost:80/api/retrieve-data.php?phase_no='+phase_no)
+      .get('http://infotechsystems.in/api/retrieve-data.php?phase_no='+phase_no)
       .subscribe((data : any) =>
       {
          console.dir(data);
